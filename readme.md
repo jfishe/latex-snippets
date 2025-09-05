@@ -1,10 +1,24 @@
 # Vim + LaTeX snippets setup
 
+These snippets are based on Gilles Castel's blog,
 *[How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)*
 
 ## Vim configuration
 
-Copy `tex.snippets` to `~/.vim/UltiSnips/` and assuming you're using [Vim Plug](https://github.com/junegunn/vim-plug), add the following to your `.vimrc`:
+Copy `tex.snippets` to `~/.vim/UltiSnips/` or do a partial clone.
+
+```bash
+cd ~/.vim/UltiSnips/
+git clone --filter=blob:none --sparse \
+  https://github.com/jfishe/latex-snippets.git tex
+cd tex
+git sparse-checkout set --no-cone /tex.snippets
+git checkout
+```
+
+Assuming you're using
+[Vim Plug](https://github.com/junegunn/vim-plug),
+add the following to your `.vimrc`:
 
 ```vim
 Plug 'sirver/ultisnips'
@@ -26,15 +40,5 @@ setlocal spell
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 ```
-
-For the colorscheme, install [pywal](https://github.com/dylanaraps/pywal), add the following to your `.vimrc`
-
-```vim
-Plug 'dylanaraps/wal'
-colorscheme wal
-set background=dark
-```
-
-Finally, execute `wal --theme base16-nord`.
 
 Something not working as expected? Feel free to open an issue!
