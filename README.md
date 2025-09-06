@@ -5,15 +5,15 @@ These snippets are based on Gilles Castel's blog,
 
 ## Vim configuration
 
-Copy `tex.snippets` to `~/.vim/UltiSnips/` or do a partial clone.
+Copy `tex.snippets` to `~/.vim/UltiSnips/` or install as a plugin.
 
 ```bash
-cd ~/.vim/UltiSnips/
-git clone --filter=blob:none --sparse \
-  https://github.com/jfishe/latex-snippets.git tex
-cd tex
-git sparse-checkout set --no-cone /tex.snippets
-git checkout
+# Replace /python/ if you prefer another :he 'packpath'.
+packpath="~/.vim/pack/python/opt"
+mkdir -p "$packpath"
+cd "$packpath"
+
+git clone https://github.com/jfishe/latex-snippets.git
 ```
 
 Assuming you're using
@@ -35,6 +35,8 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     set conceallevel=1
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
+
+Plug 'jfishe/latex-snippets'
 
 setlocal spell
 set spelllang=en_us
