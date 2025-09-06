@@ -8,12 +8,15 @@ These snippets are based on Gilles Castel's blog,
 Copy `tex.snippets` to `~/.vim/UltiSnips/` or install as a plugin.
 
 ```bash
-# Replace /python/ if you prefer another :he 'packpath'.
-packpath="~/.vim/pack/python/opt"
+# Replace /python/opt if you prefer another `:he 'packpath'` or
+# /start instead of /opt for `:he packages`.
+packpath=~/.vim/pack/python/opt
 mkdir -p "$packpath"
 cd "$packpath"
 
 git clone https://github.com/jfishe/latex-snippets.git
+
+packadd latex-snippets
 ```
 
 Assuming you're using
