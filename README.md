@@ -3,6 +3,8 @@
 These snippets are based on Gilles Castel's blog,
 *[How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)*
 
+Something not working as expected? Feel free to open an issue!
+
 ## Vim configuration
 
 Copy `tex.snippets` to `~/.vim/UltiSnips/` or install as a plugin.
@@ -46,4 +48,11 @@ set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 ```
 
-Something not working as expected? Feel free to open an issue!
+## Markdown Snippets
+
+Inline and display math snippets are available in Markdown, with Pandoc syntax,
+`set filetype=pandoc`, available in recent versions of Vim.
+Otherwise refer to
+[vim-pandoc-syntax](http://www.github.com/vim-pandoc/vim-pandoc-syntax)
+for installation instructions.
+
